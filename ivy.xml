@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+
+	<info organisation="havis.custom.harting" module="processviewer" default="true" />
+
+	<configurations>
+		<conf name="default" />
+		<conf name="runtime" />
+		<conf name="standalone" />
+		<conf name="src" />
+		<conf name="test" />
+	</configurations>
+
+	<dependencies>
+		<dependency org="havis/net" name="apps-${platform}" rev="${havis.version}" conf="standalone->default" />
+		<dependency org="havis/net" name="middleware-${platform}" rev="${havis.version}" conf="standalone->default" />
+		<dependency org="havis/middleware" name="ale-api" rev="${havis.version}" conf="*->default" />
+		<dependency org="havis/net/rest" name="middleware" rev="${havis.version}" conf="*->default" />
+
+		<dependency org="com/sun/xml/ws" name="jaxws-tools" rev="${jaxws.version}" conf="default" />
+		<dependency org="havis/tools" name="jaxb" rev="${jaxb-tool.version}" conf="default" />
+
+		<dependency org="junit" name="junit" rev="latest.integration" conf="test->default" />
+		<dependency org="org/jmockit" name="jmockit" rev="latest.integration" conf="test->default" />
+		<dependency org="org/jmockit" name="jmockit-coverage" rev="latest.integration" conf="test->default" />
+
+		<dependency org="org/osgi" name="org.osgi.core" rev="latest.integration" conf="default" />
+		
+		<dependency org="net/sf/supercsv" name="super-csv" rev="${supercsv.version}" conf="default" />
+		<dependency org="com/h2database" name="h2" rev="${h2.version}" conf="default" />
+
+		<dependency org="com/fasterxml/jackson/core" name="jackson-databind" rev="${jackson.version}" conf="default" />
+
+		<dependency org="javax/ws/rs" name="javax.ws.rs-api" rev="latest.integration" conf="default" />
+		<dependency org="javax/annotation" name="javax.annotation-api" rev="latest.integration" conf="default" />
+
+		<dependency org="havis/net/rest" name="shared" rev="${havis.version}" conf="default->default,src" />
+		<dependency org="havis/net/ui" name="shared" rev="${havis.version}" conf="default->default,src" />
+		
+		<!-- gwt -->
+		<dependency org="com/google/gwt" name="gwt-dev" rev="${gwt.version}" conf="default" />
+		<dependency org="com/google/gwt" name="gwt-user" rev="${gwt.version}" conf="default" />
+		<dependency org="com/google/gwt" name="gwt-elemental" rev="${gwt.version}" conf="default" />
+		<dependency org="org/fusesource/restygwt" name="restygwt" rev="${restygwt.version}" conf="default" />
+		<dependency org="javax/validation" name="validation-api" rev="latest.integration" conf="default->default,src" />
+
+		<conflict org="javax/validation" module="validation-api" rev="1.0.0.GA" />
+
+	</dependencies>
+
+</ivy-module>

@@ -1,0 +1,58 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:s="urn:import:havis.net.ui.shared.client">
+	<ui:with type="havis.net.ui.shared.resourcebundle.ResourceBundle"
+		field="res"></ui:with>
+
+	<ui:with
+		type="havis.custom.harting.processviewer.ui.resourcebundle.AppResources"
+		field="localRes"></ui:with>
+
+	<ui:style>
+	.section {
+		margin-top: 0.3em;
+		margin-left: 1em;
+		margin-right: 0.5em;
+		width: 35%;
+		box-shadow: 5px 5px 17px 0 rgba(0, 0, 0, 0.75);
+		border-radius: 0.5em;
+		display: inline-block;
+	}
+	
+	.label-header {
+		margin-left: 0.9em;
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+		font-weight: bold;
+		font-size: 0.8em;
+	}
+	
+	.label {
+		margin-left: 1em;
+		margin-top: 0.1em;
+		font-size: 0.8em;
+	}
+	
+	.row {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+	}
+	</ui:style>
+	<g:ScrollPanel ui:field="itemContainer" addStyleNames="{style.section}">
+		<g:FlowPanel>
+			<g:Label text="Details" addStyleNames="{style.label-header}"></g:Label>
+			<g:FlowPanel addStyleNames="{style.label} {style.row}">
+				<g:Label ui:field="formatLabel" text="Format" addStyleNames="{localRes.css.idLabelField}"
+					visible="false"></g:Label>
+				<g:TextBox ui:field="format" text="" addStyleNames="{localRes.css.idTextField}"
+					enabled="false" visible="false" />
+			</g:FlowPanel>
+			<g:FlowPanel ui:field="values" >
+			</g:FlowPanel>
+
+
+		</g:FlowPanel>
+	</g:ScrollPanel>
+
+</ui:UiBinder> 

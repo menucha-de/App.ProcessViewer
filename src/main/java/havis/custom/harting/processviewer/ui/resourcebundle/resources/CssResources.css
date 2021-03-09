@@ -1,0 +1,330 @@
+@CHARSET "UTF-8";
+
+@url EDITOR_CLOSE close;
+@url CONTEXT_CLOSED contextClosed;
+@url CONTEXT_OPENED contextOpened;
+@url SWITCH_ON contentSwitchOn;
+@url SWITCH_OFF contentSwitchOff;
+@url UPLOAD upload;
+@url ERROR error;
+@url DELETE delete;
+@url REFRESH refresh;
+@url CONNECT connect;
+
+.label {
+	font-weight: bold;
+}
+
+.listSelected {
+	background-color: rgb(255, 140, 0) !important;
+}
+
+.idValue {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	margin-left: 1em;
+	margin-top: 0.1em;
+	font-size: 0.8em;
+}
+
+.idTextField {
+	padding-left: 0.5em !important;
+	font-size: 0.8em;
+	margin-left: 1em;
+	margin-top: 0.1em;
+}
+
+.idTextField:disabled {
+	color: graytext;
+	background-color: transparent;
+}
+
+.idLabelField {
+	width: 3em;
+	margin-top: 0.1em;
+}
+
+.leftPosition {
+	left: -174px;
+}
+
+.middlePosition {
+	left: -97px;
+}
+
+.rightPosition {
+	left: -20px;
+}
+
+.taskSelected {
+	background: rgb(255, 140, 0) !important;
+}
+
+.info-html-background {
+	z-index: 2; /* changed z-index */
+	position: fixed; /* changed position */
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(255, 255, 255, 0.75);
+	overflow: auto;
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.info-html-close {
+	background-image: EDITOR_CLOSE;
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	right: -35px;
+	top: 21px;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+	z-index: 1;
+	box-shadow: 7px 5px 17px 0 rgba(0, 0, 0, 0.75);
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+
+.info-html-dialog {
+	position: relative;
+	margin: 5em auto 0;
+	max-width: 800px;
+	background: white;
+	padding: 1.5em;
+	border-radius: 1em;
+	box-shadow: 5px 5px 17px 0px rgba(0, 0, 0, 0.75);
+}
+
+.commonLabel {
+	padding: 0.3em 0.25em 0.25em 0.45em;
+	width: 9em;
+}
+
+.commonLabelTask {
+	padding: 0.3em 0.25em 0.25em 0.45em;
+	width: 3em;
+}
+
+.commonLabelBold {
+	padding: 0.3em 0.25em 0.25em 0.45em;
+	width: 9em;
+	font-weight: bold;
+}
+
+.webui-TextBox, .webui-ListBox {
+	padding: 0.3em 0.25em 0.25em 0.45em;
+	box-sizing: border-box;
+	font-size: 1em;
+	border: 1px solid #cccccc;
+	border-radius: 2.5em;
+	width: 100%;
+	flex: 1;
+}
+
+.webui-TextBox:disabled, .webui-ListBox:disabled {
+	color: graytext;
+	background-color: transparent;
+}
+
+.webui-Apply-Button {
+	padding: 0.5em 1.5em;
+	box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.25);
+	background: #ffdc51; /* Fallback */
+	background: -webkit-linear-gradient(to bottom, #ffdc51, #ffcc02);
+	background: linear-gradient(to bottom, #ffdc51, #ffcc02);
+	border: 1px transparent solid;
+	cursor: pointer;
+	border-radius: 1.25em;
+	font-weight: bold;
+	color: black;
+	font-size: 1em;
+}
+
+.addButton {
+	height: 32px;
+	width: 32px;
+	left: 95px;
+	top: 1.3em;
+	position: relative;
+	background-image: CONTEXT_CLOSED;
+	z-index: 1;
+	opacity: 1;
+	transition: opacity 0.3s;
+}
+
+.deleteButton {
+	height: 32px;
+	width: 32px;
+	left: 11px;
+	margin-left: -32px;
+	top: -11px;
+	position: relative;
+	background-image: DELETE;
+	background-size: 32px 32px;
+	z-index: 1;
+	opacity: 1;
+	transition: opacity 0.3s;
+	cursor: pointer;
+}
+
+.deleteReadPointButton {
+	height: 32px;
+	width: 32px;
+	right: 14px;
+	top: -23px;
+	margin-left: -28px;
+	margin-top: -32px;
+	position: relative;
+	background-image: CONTEXT_CLOSED;
+	z-index: 1;
+	opacity: 1;
+	transition: opacity 0.3s;
+	cursor: pointer;
+	margin: auto;
+	opacity: 0;
+}
+
+.deleteReadPointButtonEnabled {
+	opacity: 1;
+}
+
+.deleteReadPointButtonMinus {
+	background-image: CONTEXT_OPENED;
+}
+
+.pwdToggle {
+	height: 35px;
+}
+
+.webui-message-popup-panel {
+	font-size: 1.5em;
+	position: fixed !important;
+	z-index: 1000;
+	top: -1000em;
+	left: 3em;
+	right: 3em;
+	transition: top 1s ease;
+	line-height: 1.5em;
+	overflow: auto;
+	text-align: left;
+	max-height: 3.5em;
+	overflow: auto;
+	padding-bottom: 1em;
+	border: 0.2em solid lightgray;
+	border-radius: 0.75em;
+	-webkit-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.25);
+	padding: 0.25em 0.5em;
+	background: rgba(255, 255, 255, 0.9);
+}
+
+.webui-message-popup-panel>div {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	/*0.25em 1em*/
+}
+
+.webui-message-popup-panel-error-dot {
+	position: absolute;
+	background-color: red;
+	border-radius: 50%;
+	width: 0.5em;
+	height: 0.5em;
+	right: 0.3em;
+	top: 0.3em;
+}
+
+.webui-message-popup-panel>div>div:last-child {
+	padding: 0.2em 0.5em;
+	font-size: 0.8em;
+	line-height: 1.5em;
+}
+
+.readPointStyle {
+	border: 0;
+	margin: auto;
+	width: 45px;
+	height: 45px;
+	position: relative;
+	left: 2px;
+	margin-right: 32px;
+	margin-top: -32px;
+	opacity: 0;
+}
+
+.readPointStyleEnabled {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.fileButton {
+	cursor: pointer;
+	width: 8em;
+	border: 0;
+	height: 1.8em;
+	font-size: 1em;
+	text-indent: 1em;
+}
+
+.buttons {
+	margin-left: 0.5em;
+	display: inline-flex;
+	display: -ms-inline-flex;
+	line-height: 1.8em;
+	border: 1px solid lightgrey;
+	border-radius: 5px;
+	background: linear-gradient(#fff, #f2f2f2);
+	box-shadow: 0 2px 5px #d2d2d2;
+}
+
+.upload {
+	background: UPLOAD no-repeat 0.3em center;
+}
+
+@sprite .clear-button {
+	gwt-image: "clear";
+	border: 0;
+	margin-right: 1em;
+}
+
+@sprite .export-button {
+	gwt-image: "export";
+	border: 0;
+}
+
+@sprite .refresh-button {
+	gwt-image: "refresh";
+	border: 0;
+	margin-right: 1em;
+}
+
+@sprite .connect {
+	position: relative;
+    margin-left: -40px;
+    top: 80px;
+    left: 35px;
+	gwt-image: "connect";
+	border: 0;
+}
+
+.infoStyle {
+	margin-left: 0.6em;
+	margin-top: 3px;
+	cursor: pointer;
+}
+
+.quickDetails {
+	box-shadow: 5px 5px 17px 0 rgba(0, 0, 0, 0.75);
+	border-radius: 0.5em;
+	border: 0.2em solid lightgray;
+	background-color: #fff;
+	color: #000;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion" : null,
+  "creationDate" : null,
+  "name" : null,
+  "baseExtension" : null,
+  "enable" : true,
+  "id" : null,
+  "spec" : {
+    "schemaVersion" : null,
+    "creationDate" : null,
+    "logicalReaders" : null,
+    "boundarySpec" : {
+      "startTrigger" : null,
+      "repeatPeriod" : {
+        "value" : 0,
+        "unit" : "MS"
+      },
+      "stopTrigger" : null,
+      "duration" : {
+        "value" : 1000,
+        "unit" : "MS"
+      },
+      "stableSetInterval" : null,
+      "extension" : {
+        "startTriggerList" : null,
+        "stopTriggerList" : null,
+        "whenDataAvailable" : null,
+        "extension" : null
+      }
+    },
+    "reportSpecs" : {
+      "reportSpec" : [ {
+        "reportSet" : {
+          "set" : "CURRENT"
+        },
+        "filterSpec" : null,
+        "groupSpec" : null,
+        "output" : {
+          "extension" : {
+            "fieldList" : {
+              "field" : [ {
+                "fieldspec" : {
+                  "fieldname" : "@3.urn:oid:1.0.15961.*",
+                  "datatype" : null,
+                  "format" : null,
+                  "extension" : null
+                },
+                "name" : null,
+                "includeFieldSpecInReport" : null,
+                "extension" : null
+              } ]
+            },
+            "extension" : null
+          },
+          "includeEPC" : true,
+          "includeTag" : false,
+          "includeRawHex" : false,
+          "includeRawDecimal" : false,
+          "includeCount" : false
+        },
+        "extension" : null,
+        "reportName" : null,
+        "reportIfEmpty" : false,
+        "reportOnlyOnChange" : true
+      } ]
+    },
+    "extension" : null,
+    "any" : [ ],
+    "includeSpecInReports" : false
+  },
+  "extension" : null,
+  "any" : [ ]
+}

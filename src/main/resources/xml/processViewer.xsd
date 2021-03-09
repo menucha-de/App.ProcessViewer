@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="urn:havis:custom:harting:processviewer:xsd:1"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:havis:custom:harting:processviewer:xsd:1"
+	elementFormDefault="qualified">
+
+
+	<xs:complexType name="Field">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="value" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="HistoryEntry">
+		<xs:sequence>
+			<xs:element name="id" type="xs:long" />
+			<xs:element name="time" type="xs:long" />
+			<xs:element name="epc" type="xs:string" />
+			<xs:element name="readPoint" type="xs:string" />
+			<xs:element name="format" type="xs:string" />
+			<xs:element name="fields" type="Field" maxOccurs="unbounded"
+				nillable="false" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="Position" final="restriction">
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="0" />
+			<xs:enumeration value="1" />
+			<xs:enumeration value="2" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="ReadPoint">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="position" type="Position" />
+			<xs:element name="aleHost" type="xs:string" />
+			<xs:element name="aleUser" type="xs:string" />
+			<xs:element name="alePassword" type="xs:string" />
+			<xs:element name="readerType" type="xs:string" />
+			<xs:element name="readerConnection" type="xs:string" />
+			<xs:element name="antenna" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Task">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="position" type="xs:int" />
+			<xs:element name="readPoints" type="ReadPoint" maxOccurs="unbounded"
+				nillable="false" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Configuration">
+		<xs:sequence>
+			<xs:element name="tasks" type="Task" maxOccurs="unbounded"
+				nillable="false" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

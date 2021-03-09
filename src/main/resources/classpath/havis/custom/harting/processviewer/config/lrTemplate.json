@@ -1,0 +1,21 @@
+{
+  "schemaVersion" : null,
+  "creationDate" : null,
+  "name" : null,
+  "baseExtension" : null,
+  "enable" : true,
+  "id" : null,
+  "spec" : {
+    "schemaVersion" : null,
+    "creationDate" : null,
+    "isComposite" : null,
+    "readers" : null,
+    "properties" : null,
+    "extension" : null,
+    "any" : [ ]
+  },
+  "extension" : null,
+  "any" : [ ]
+}
+
+

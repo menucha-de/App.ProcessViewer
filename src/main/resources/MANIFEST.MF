@@ -1,0 +1,34 @@
+Bundle-Name: Ha-VIS Custom Process Viewer App
+Bundle-SymbolicName: havis.custom.harting.processviewer
+Bundle-Version: 2.7.0
+Application-Name: Process Viewer
+Implementation-Version: 2.7
+Bundle-ManifestVersion: 2
+Bundle-Vendor: HARTING IT_SD
+Havis-Bundle: 
+ /OSGI-INF/havis.custom.harting.processviewer.properties
+Bundle-Activator: havis.custom.harting.processviewer.osgi.Activator
+Import-Package: 
+ com.fasterxml.jackson.databind,
+ havis.net.rest.shared.data,
+ havis.middleware.ale.service,
+ havis.middleware.ale.service.lr,
+ havis.middleware.ale.service.mc,
+ havis.middleware.ale.service.ec,
+ havis.middleware.ale.base.exception,
+ com.fasterxml.jackson.core.type,
+ javax.ws.rs,
+ javax.ws.rs.core,
+ javax.ws.rs.ext,
+ javax.net.ssl,
+ javax.xml.bind, 
+ javax.xml.transform.stream,
+ org.supercsv.cellprocessor.ift,
+ org.supercsv.io,
+ org.supercsv.prefs,
+ org.supercsv.util,
+ org.h2;resolution:=optional,
+ org.osgi;resolution:=optional,
+ org.osgi.framework;resolution:=optional,
+ org.osgi.util.tracker;resolution:=optional
+
