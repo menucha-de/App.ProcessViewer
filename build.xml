@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="havis.custom.harting.processviewer" default="publish" xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:if="ant:if">
+<project name="havis.app.processviewer" default="publish" xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:if="ant:if">
 
 	<property file="${basedir}/build.properties" />
 
@@ -40,7 +40,7 @@
 	</target>
 
 	<target name="app" depends="jar">
-		<deb dst="${build.dir}/tar" name="90_havis.custom.harting.processviewer"/>
+		<deb dst="${build.dir}/tar" name="90_havis.app.processviewer"/>
 		<app deb="false" name="havis.processviewer" />
 	</target>
 

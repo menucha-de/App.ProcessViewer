@@ -1,0 +1,98 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:s="urn:import:havis.net.ui.shared.client">
+	<ui:with type="havis.net.ui.shared.resourcebundle.ResourceBundle"
+		field="res"></ui:with>
+	<ui:with
+		type="havis.app.processviewer.ui.resourcebundle.AppResources"
+		field="localRes"></ui:with>
+	<ui:style>
+	.taskStyle {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		border-radius: 14px;
+		border: 1px solid #dbd4b7;
+		box-shadow: 0 2px 0 #e3e3e3;
+		background: linear-gradient(rgba(255, 221, 84, 1), rgba(246, 205, 39, 1));
+		height: 200px;
+		width: 200px;
+	}
+	
+	.label-header {
+		margin-bottom: 0.5em;
+		font-weight: bold;
+		font-size: 0.8em;
+	}
+	
+	.readPoint {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		margin-bottom: 0.1em;
+		width: 200px;
+	}
+	
+	.taskHeader {
+		margin: 0.5em 20px 15px 15px;
+		text-align: center;
+		width: 200px;
+	}
+	
+	.imageStyle {
+		display: block;
+		border: 0;
+		background: rgba(255, 204, 0, 1);
+		min-width: 178px;
+		min-height: 178px;
+		max-width: 178px;
+		max-height: 178px;
+		margin: auto;
+		margin-top: 11px;
+		margin-bottom: 11px;
+		cursor: pointer;
+	}
+		
+	.verticalLine {
+		position: relative;
+		border-left: dotted 4px rgb(255, 140, 0);
+		margin-left: -4px;
+		height: 220px;
+	}
+	</ui:style>
+	<g:FlowPanel ui:field="container" addStyleNames="{style.taskHeader}">
+		<g:Label ui:field="name" addStyleNames="{style.label-header}" />
+		<g:FlowPanel ui:field="icon" addStyleNames="{style.taskStyle}">
+			<g:Image ui:field="innerIcon" url="{localRes.defaultTask.getSafeUri.asString}"
+				addStyleNames="{style.imageStyle}" />
+			<g:FlowPanel ui:field="stepPointer" addStyleNames="{style.verticalLine}"
+				visible="false" />
+			<g:FlowPanel ui:field="delete" addStyleNames="{localRes.css.deleteButton}"
+				visible="false" />
+			<g:FlowPanel ui:field="connected" addStyleNames="{localRes.css.connect}"
+				visible="true" />				
+		</g:FlowPanel>
+		<g:FlowPanel ui:field="readPoints" addStyleNames="{style.readPoint}">
+			<g:FlowPanel>
+				<g:FlowPanel ui:field="deleteInput"
+					addStyleNames="{localRes.css.deleteReadPointButton}" />
+				<g:Image ui:field="input" url="{localRes.readpoint.getSafeUri.asString}"
+					addStyleNames="{localRes.css.readPointStyle}" />
+			</g:FlowPanel>
+			<g:FlowPanel>
+				<g:FlowPanel ui:field="deleteProcess"
+					addStyleNames="{localRes.css.deleteReadPointButton}" />
+				<g:Image ui:field="process" url="{localRes.readpoint.getSafeUri.asString}"
+					addStyleNames="{localRes.css.readPointStyle}" />
+			</g:FlowPanel>
+			<g:FlowPanel>
+				<g:FlowPanel ui:field="deleteOutput"
+					addStyleNames="{localRes.css.deleteReadPointButton}" visible="true" />
+				<g:Image ui:field="output" url="{localRes.readpoint.getSafeUri.asString}"
+					addStyleNames="{localRes.css.readPointStyle}" />
+			</g:FlowPanel>
+		</g:FlowPanel>
+
+	</g:FlowPanel>
+
+</ui:UiBinder> 

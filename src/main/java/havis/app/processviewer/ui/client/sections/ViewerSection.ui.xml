@@ -1,0 +1,91 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:s="urn:import:havis.net.ui.shared.client"
+	xmlns:sections="urn:import:havis.app.processviewer.ui.client.sections"
+	xmlns:t="urn:import:havis.app.processviewer.ui.client.tasks">
+	<ui:with type="havis.net.ui.shared.resourcebundle.ResourceBundle"
+		field="res"></ui:with>
+	<ui:with
+		type="havis.app.processviewer.ui.resourcebundle.AppResources"
+		field="localRes"></ui:with>
+	<ui:style>
+	.imageStyle {
+		display: block;
+		border: 0;
+		background: rgba(255, 204, 0, 1);
+		min-width: 178px;
+		min-height: 178px;
+		max-width: 178px;
+		max-height: 178px;
+		cursor: pointer;
+		margin: auto;
+		margin-top: 11px;
+		margin-bottom: 11px;
+	}
+	
+	.border {
+		border-radius: 14px;
+		border: 1px solid #dbd4b7;
+		box-shadow: 0 2px 0 #e3e3e3;
+		background: linear-gradient(rgba(255, 221, 84, 1), rgba(246, 205, 39, 1));
+		height: 200px;
+		width: 200px;
+		margin: 0.5em 20px 15px 20px;
+	}
+	
+	.label {
+		border-bottom: 1px solid lightgrey;
+		cursor: pointer;
+		display: block;
+		text-decoration: none;
+		color: captiontext;
+	}
+	
+	.area {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		overflow-x: hidden;
+		border-bottom: 1px solid lightgrey;
+	}
+	
+	.label-header {
+		margin-bottom: 0.5em;
+		font-weight: bold;
+		font-size: 0.8em;
+	}
+	
+	.taskHeader {
+		margin: 0.5em 20px 3.2em 15px;
+		text-align: center;
+		width: 200px;
+	}
+	
+	.taskStyle {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		border-radius: 14px;
+		border: 1px solid #dbd4b7;
+		box-shadow: 0 2px 0 #e3e3e3;
+		background: linear-gradient(rgba(255, 221, 84, 1), rgba(246, 205, 39, 1));
+		height: 200px;
+		width: 200px;
+	}
+	</ui:style>
+	<g:FlowPanel>
+		<g:FlowPanel ui:field="area" addStyleNames="{style.area}">
+
+			<g:FlowPanel ui:field="newTask" addStyleNames="{style.taskHeader}">
+				<g:Label text="New Task" ui:field="name" addStyleNames="{style.label-header}" />
+				<g:FlowPanel ui:field="icon" addStyleNames="{style.taskStyle}">
+					<g:Image ui:field="innerIcon"
+						url="{localRes.add.getSafeUri.asString}" addStyleNames="{style.imageStyle}" />
+				</g:FlowPanel>
+			</g:FlowPanel>
+
+		</g:FlowPanel>
+	</g:FlowPanel>
+</ui:UiBinder> 

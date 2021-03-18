@@ -1,0 +1,53 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:u="urn:import:havis.net.ui.shared.client.upload">
+	<ui:with type="havis.net.ui.shared.resourcebundle.ConstantsResource"
+		field="lang" />
+	<ui:with type="havis.net.ui.shared.resourcebundle.ResourceBundle"
+		field="res" />
+	<ui:with
+		type="havis.app.processviewer.ui.resourcebundle.AppResources"
+		field="localRes" />
+	<ui:with
+		type="havis.app.processviewer.ui.resourcebundle.ConstantsResource"
+		field="i18n" />
+
+	<ui:style>
+	.image {
+		max-width: 70px;
+		max-height: 70px;
+		position: absolute;
+		right: 1em;
+		top: 2.8em;
+	}
+	
+	.picture {
+		margin-right: 74px;
+	}
+	
+	</ui:style>
+
+	<g:FlowPanel ui:field="infoView" styleName="{localRes.css.infoHtmlBackground}">
+		<g:FlowPanel ui:field="infoDialog" stylePrimaryName="{localRes.css.infoHtmlDialog}">
+		<g:Label ui:field="infoCloseLabel" stylePrimaryName="{localRes.css.infoHtmlClose}" />
+			<g:Label ui:text="{i18n.taskHeader}" addStyleNames="{localRes.css.commonLabelBold}" />
+			<g:Image ui:field="image" url="{localRes.defaultTask.getSafeUri.asString}"
+				styleName="{style.image}" />
+			<g:FlowPanel addStyleNames="{res.css.row} {res.css.config} {style.picture}">
+				<g:Label ui:text="{i18n.name}" addStyleNames="{localRes.css.commonLabelTask}" />
+				<g:TextBox ui:field="nameBox" addStyleNames="{localRes.css.webuiTextBox}" />
+			</g:FlowPanel>
+			<g:FlowPanel styleName="{res.css.webuiEditorRow}">
+				<g:Label text="Icon" addStyleNames="{localRes.css.commonLabelTask}" />
+				<g:FlowPanel styleName="{localRes.css.buttons}">
+					<g:Button ui:field="uploadButton" text="Upload icon"
+						addStyleNames="{localRes.css.fileButton} {localRes.css.upload}" />
+				</g:FlowPanel>
+			</g:FlowPanel>
+			<g:Button ui:field="acceptButton" text="{i18n.buttonApply}"
+				stylePrimaryName="{localRes.css.webuiApplyButton}" />
+		</g:FlowPanel>
+		<u:MultipleFileUpload ui:field="upload" visible="false"
+			accept=".png" />
+	</g:FlowPanel>
+</ui:UiBinder> 
